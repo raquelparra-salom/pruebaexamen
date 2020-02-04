@@ -10,11 +10,14 @@ def login():
     return render_template("index.html")
 
 @app.route('/play', methods=['POST'])
+def play():
 
-numero1 = request.form['numerouno']
-numero2 = request.form['numerodos']
+numerouno = request.form['numerouno']
+numerodos = request.form['numerodos']
 
-suma = numero1 + numero2
+suma = int(numerouno) + int(numerodos)
+    return render_template("play.html")
+    return render_template("play.html", suma=suma)
 
 
 
